@@ -1,14 +1,27 @@
 {
-  "name": "learn-vue-cli",
-  "version": "1.0.0",
-  "description": "",
+  "name": "template-vue-cli",
+  "version": "0.0.1",
+  "description": "脚手架自动生成工具",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Vite",
+    "TypeScript",
+    "Vue",
+    "rollup"
+  ],
+  "author": "Jing",
+  "bin": {
+    "template": "bin/index.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md"
+  ],
   "license": "ISC",
   "dependencies": {
     "@inquirer/prompts": "^7.2.3",
