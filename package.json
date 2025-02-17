@@ -15,7 +15,7 @@
   ],
   "author": "Jing",
   "bin": {
-    "template": "bin/index.js"
+    "template-vue-cli": "bin/index.js"
   },
   "files": [
     "dist",

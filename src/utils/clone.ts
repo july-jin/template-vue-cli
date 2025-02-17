@@ -13,7 +13,7 @@ const logger = createLogger({
 });
 
 const gitOptions: Partial<SimpleGitOptions> = {
-  baseDir:  path.resolve(process.cwd(), `./project`),
+  baseDir: process.cwd(),
   binary: 'git',
   maxConcurrentProcesses: 6,
 };
