@@ -17,11 +17,8 @@ const gitOptions: Partial<SimpleGitOptions> = {
   binary: 'git',
   maxConcurrentProcesses: 6,
 };
-const goodPrinter = async () => {
-  const data = await figlet('欢迎使用 ！！！');
-  console.log(chalk.rgb(40, 156, 193).visible(data));
-};
-export const clone = async (url: string, projactName: string, options: Array<string>) => {
+// 代码拉取
+export const clone = async (url: string, projactName: string, options: Array<string>, name: string) => {
   const gitClone = new Promise((resolve, reject) => {
     simpleGit(gitOptions).clone(url, projactName, options, (err) => {
       if (err) {
@@ -39,21 +36,33 @@ export const clone = async (url: string, projactName: string, options: Array<str
     console.log()
     console.log()
     console.log()
-    console.log(`${chalk.green("✅下载成功!!!")}`)
-    console.log(`${chalk.blueBright("*************************************")}`)
-    console.log(`${chalk.blueBright("*************************************")}`)
-    console.log(`${chalk.blueBright("*******欢迎使用 tz-cli脚手架*********")}`)
+    console.log(`${chalk.green("✅ 下载成功!!!")}`)
+    console.log()
+    console.log()
     console.log(`${chalk.blueBright("*************************************")}`)
     console.log(`${chalk.blueBright("*************************************")}`)
     console.log()
+    console.log(`${chalk.blueBright(`********** 欢迎使用 ${name} **********`)}`)
     console.log()
+    console.log(`${chalk.blueBright("*************************************")}`)
+    console.log(`${chalk.blueBright("*************************************")}`)
     console.log()
-
-    goodPrinter()
-
-    console.log(`✨${chalk.blueBright("安装依赖:pnpm install")}`)
-    console.log(`✨${chalk.blueBright("启动项目:pnpm run dev")}`)
-
+    // 打印logo
+    figlet.text(`${name}`, {
+      font: "Ghost",
+      horizontalLayout: "default",
+      verticalLayout: "default",
+      width: 80,
+      whitespaceBreak: true,
+    }, (err, data) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log(chalk.rgb(40, 156, 193).visible(data));
+      console.log(`✨ ${chalk.blueBright("安装依赖:pnpm install")}`)
+      console.log(`✨ ${chalk.blueBright("启动项目:pnpm run dev")}`)
+    });
 
   } catch (error) {
     console.log(chalk.redBright('💀下载失败！'))

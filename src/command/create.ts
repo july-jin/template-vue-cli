@@ -43,7 +43,6 @@ export function isOverWrite(fileName: string) {
 export const getNpmLastestVersion = async (name: string) => {
   const npmUrl = `https://registry.npmjs.org/${name}`
   const { data } = (await axios.get(npmUrl) || {}) as AxiosResponse
-  console.log('版本信息', data)
   return data['dist-tags'].latest
 }
 
@@ -74,7 +73,6 @@ export async function create(projectName?: string) {
     })
   }
   const filePath = path.resolve(process.cwd(), `${projectName}`)
-  console.log('文件路径', filePath)
   // 判断项目是否存在
   if (fs.existsSync(filePath)) {
     const isRun = await isOverWrite(projectName)
@@ -98,6 +96,6 @@ export async function create(projectName?: string) {
     console.log('模板不存在')
     return
   } else {
-    clone(gitTemplateInfo.downLoadUrl, projectName as string, ['-b', gitTemplateInfo.branch])
+    clone(gitTemplateInfo.downLoadUrl, projectName as string, ['-b', gitTemplateInfo.branch], gitTemplateInfo.name)
   }
 }
