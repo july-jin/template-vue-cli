@@ -2,7 +2,7 @@
 import simpleGit, { SimpleGitOptions } from "simple-git"
 import createLogger from "progress-estimator"
 import chalk from 'chalk'
-import path from 'path'
+import figlet from 'figlet'
 
 // 初始化进度条
 const logger = createLogger({
@@ -16,6 +16,10 @@ const gitOptions: Partial<SimpleGitOptions> = {
   baseDir: process.cwd(),
   binary: 'git',
   maxConcurrentProcesses: 6,
+};
+const goodPrinter = async () => {
+  const data = await figlet('欢迎使用 ！！！');
+  console.log(chalk.rgb(40, 156, 193).visible(data));
 };
 export const clone = async (url: string, projactName: string, options: Array<string>) => {
   const gitClone = new Promise((resolve, reject) => {
@@ -35,7 +39,7 @@ export const clone = async (url: string, projactName: string, options: Array<str
     console.log()
     console.log()
     console.log()
-    console.log(`${chalk.green("下载成功!!!")}`)
+    console.log(`${chalk.green("✅下载成功!!!")}`)
     console.log(`${chalk.blueBright("*************************************")}`)
     console.log(`${chalk.blueBright("*************************************")}`)
     console.log(`${chalk.blueBright("*******欢迎使用 tz-cli脚手架*********")}`)
@@ -44,10 +48,15 @@ export const clone = async (url: string, projactName: string, options: Array<str
     console.log()
     console.log()
     console.log()
-    console.log(`${chalk.blueBright("请使用pnpm install安装依赖")}`)
-    console.log(`${chalk.blueBright("请使用pnpm run dev启动项目")}`)
+
+    goodPrinter()
+
+    console.log(`✨${chalk.blueBright("安装依赖:pnpm install")}`)
+    console.log(`✨${chalk.blueBright("启动项目:pnpm run dev")}`)
+
+
   } catch (error) {
-    console.log(chalk.redBright('下载失败！'))
+    console.log(chalk.redBright('💀下载失败！'))
     console.log(error)
   }
 

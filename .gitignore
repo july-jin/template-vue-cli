@@ -8,4 +8,4 @@ yarn-error.log*
 
 package-lock.json
 yarn.lock
-project/
+pnpm-lock.yaml
