@@ -12,7 +12,7 @@ const spinner = ora({
 })
 export async function update() {
   spinner.start()
-  process.exec('pnpm install template-vue-cli@latest -g', (error, stdout, stderr) => {
+  process.exec('npm install template-vue-cli@latest -g', (error, stdout, stderr) => {
     if (error) {
       spinner.fail(`${chalk.red('更新失败')}`)
       console.error(`exec error: ${error}`);
