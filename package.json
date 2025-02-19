@@ -30,7 +30,6 @@
     "loadsh": "^0.0.4",
     "ora": "^5.0.0",
     "simple-git": "^3.27.0",
-    "template-vue-cli": "^0.0.6",
     "tslib": "^2.8.1",
     "typescript": "^5.7.3"
   },

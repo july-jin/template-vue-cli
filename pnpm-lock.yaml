@@ -27,8 +27,8 @@ importers:
         specifier: ^3.27.0
         version: 3.27.0
       template-vue-cli:
-        specifier: ^0.0.6
-        version: 0.0.6(@types/node@22.13.1)
+        specifier: ^0.0.7
+        version: 0.0.7(@types/node@22.13.1)
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -881,6 +881,10 @@ packages:
     resolution: {integrity: sha512-VLnOxK8WTMxZ9g4QLT2flgKfMneE9/7JtXVlAMlPI9WS4UV2X7DTI62QQ3M+djgj4CHnsh+49XCCWwqTVRZodg==}
     hasBin: true
 
+  template-vue-cli@0.0.7:
+    resolution: {integrity: sha512-a+qu/0MqVwKfQitC19RdZ4m4nppRl0kSsw2irpAygFUh3Tbsb5wPRrAOTNyHPsnjz7vRQQh+/aifU+c7oMXnmQ==}
+    hasBin: true
+
   terser@5.38.1:
     resolution: {integrity: sha512-GWANVlPM/ZfYzuPHjq0nxT+EbOEDDN3Jwhwdg1D8TU8oSkktp8w64Uq4auuGLxFSoNTRDncTq2hQHX1Ld9KHkA==}
     engines: {node: '>=10'}
@@ -1662,6 +1666,21 @@ snapshots:
       figlet: 1.8.0
       loadsh: 0.0.4
       simple-git: 3.27.0
+      tslib: 2.8.1
+      typescript: 5.7.3
+    transitivePeerDependencies:
+      - '@types/node'
+      - supports-color
+
+  template-vue-cli@0.0.7(@types/node@22.13.1):
+    dependencies:
+      '@inquirer/prompts': 7.3.1(@types/node@22.13.1)
+      commander: 13.1.0
+      figlet: 1.8.0
+      loadsh: 0.0.4
+      ora: 5.0.0
+      simple-git: 3.27.0
+      template-vue-cli: 0.0.6(@types/node@22.13.1)
       tslib: 2.8.1
       typescript: 5.7.3
     transitivePeerDependencies:
