@@ -60,6 +60,7 @@ export const clone = async (url: string, projactName: string, options: Array<str
         return;
       }
       console.log(chalk.rgb(40, 156, 193).visible(data));
+      console.log()
       console.log(`✨ ${chalk.blueBright("安装依赖:pnpm install")}`)
       console.log(`✨ ${chalk.blueBright("启动项目:pnpm run dev")}`)
     });

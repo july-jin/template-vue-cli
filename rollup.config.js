@@ -17,10 +17,6 @@ export default defineConfig([
         format: 'cjs', // 输出 commonjs 文件
       }
     ],
-    external: [
-      // 使用正则表达式排除 project 文件夹下的所有模块
-      /^project\/.*/
-    ],
     // 这些依赖的作用上文提到过
     plugins: [
       nodeResolve(),
